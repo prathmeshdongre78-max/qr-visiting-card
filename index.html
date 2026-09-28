@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Visiting Card Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="top">
+    <h1>QR Visiting Card Generator</h1>
+    <p>Fill in your details. Your card and QR code update live.</p>
+  </header>
+
+  <main class="layout">
+
+    <!-- LEFT SIDE: input form -->
+    <section class="panel">
+      <h2>Your details</h2>
+
+      <label for="name">Full name</label>
+      <input id="name" type="text" placeholder="e.g. Rahul Sharma">
+
+      <label for="title">Job title</label>
+      <input id="title" type="text" placeholder="e.g. Web Developer">
+
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" placeholder="e.g. +91 98765 43210">
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="e.g. rahul@example.com">
+
+      <label for="website">Website or LinkedIn</label>
+      <input id="website" type="url" placeholder="e.g. https://linkedin.com/in/rahul">
+
+      <label for="color">Card colour</label>
+      <input id="color" type="color" value="#0f766e">
+
+      <button id="downloadCard" class="btn primary">Download card (PNG)</button>
+      <button id="downloadQR" class="btn">Download QR only</button>
+      <button id="resetBtn" class="btn ghost">Clear form</button>
+    </section>
+
+    <!-- RIGHT SIDE: live preview -->
+    <section class="preview">
+      <div id="card" class="card">
+        <div class="card-info">
+          <h3 id="cName">Your Name</h3>
+          <p id="cTitle" class="role">Your Job Title</p>
+
+          <ul>
+            <li id="cPhone">+91 00000 00000</li>
+            <li id="cEmail">you@example.com</li>
+            <li id="cWebsite">yourwebsite.com</li>
+          </ul>
+        </div>
+
+        <div class="card-qr">
+          <div id="qrcode"></div>
+          <span>Scan to save contact</span>
+        </div>
+      </div>
+
+      <p class="hint">Scanning the QR code with a phone camera offers to save you as a contact.</p>
+    </section>
+
+  </main>
+
+  <footer>Mini Project | Web Technology</footer>
+
+  <!-- Libraries: QR code maker and "HTML to image" converter -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- Our own code -->
+  <script src="script.js"></script>
+</body>
+</html>
